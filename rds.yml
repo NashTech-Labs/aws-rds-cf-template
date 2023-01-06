@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: RDS
+Resources:
+  MySQLDatabase:
+    Type: 'AWS::RDS::DBInstance'
+    Properties:
+      Engine: MySQL
+      DBName: "RDS"
+      MasterUsername: 'admin'
+      MasterUserPassword: 'admin'
+      DBInstanceClass: db.t2.small
+      AllocatedStorage: 5
+Outputs:
+  MySQLDatabase:
+    Description: 'RDS'
+    Value:
+      Ref: 'MySQLDatabase'
